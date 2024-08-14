@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void listener() {
-    print(controller.value.selectedIndexes);
+    // print(controller.value.selectedIndexes);
   }
 
   @override
@@ -55,7 +55,6 @@ class _MyAppState extends State<MyApp> {
         padding: const EdgeInsets.all(8),
         itemCount: 90,
         triggerSelectionOnTap: true,
-        selectDisabled: true,
         itemBuilder: (context, index, selected) {
           return GestureDetector(
             onTap: () {
