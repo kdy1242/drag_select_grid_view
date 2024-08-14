@@ -57,10 +57,15 @@ class _MyAppState extends State<MyApp> {
         triggerSelectionOnTap: true,
         selectDisabled: true,
         itemBuilder: (context, index, selected) {
-          return SelectableItem(
-            index: index,
-            color: Colors.blue,
-            selected: selected,
+          return GestureDetector(
+            onTap: () {
+              print('test');
+            },
+            child: SelectableItem(
+              index: index,
+              color: Colors.blue,
+              selected: selected,
+            ),
           );
         },
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
