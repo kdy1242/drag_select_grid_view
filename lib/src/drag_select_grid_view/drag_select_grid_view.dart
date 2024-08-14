@@ -95,6 +95,7 @@ class DragSelectGridView extends StatefulWidget {
     this.restorationId,
     this.clipBehavior = Clip.hardEdge,
     this.impliesAppBarDismissal = true,
+    this.selectDisabled = false,
   })  : autoScrollHotspotHeight =
             autoScrollHotspotHeight ?? defaultAutoScrollHotspotHeight,
         scrollController = scrollController ?? ScrollController(),
@@ -187,6 +188,8 @@ class DragSelectGridView extends StatefulWidget {
   /// Refer to [LocalHistoryEntry.impliesAppBarDismissal].
   final bool impliesAppBarDismissal;
 
+  final bool selectDisabled;
+
   @override
   DragSelectGridViewState createState() => DragSelectGridViewState();
 }
@@ -246,10 +249,11 @@ class DragSelectGridViewState extends State<DragSelectGridView>
   Widget build(BuildContext context) {
     super.build(context);
     return GestureDetector(
-      onTapUp: _handleTapUp,
-      onLongPressStart: _handleLongPressStart,
-      onLongPressMoveUpdate: _handleLongPressMoveUpdate,
-      onLongPressEnd: _handleLongPressEnd,
+      onTapUp: widget.selectDisabled ? null : _handleTapUp,
+      onLongPressStart: widget.selectDisabled ? null : _handleLongPressStart,
+      onLongPressMoveUpdate:
+          widget.selectDisabled ? null : _handleLongPressMoveUpdate,
+      onLongPressEnd: widget.selectDisabled ? null : _handleLongPressEnd,
       behavior: HitTestBehavior.translucent,
       child: IgnorePointer(
         ignoring: isDragging,
