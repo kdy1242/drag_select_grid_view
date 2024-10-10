@@ -31,12 +31,12 @@ import 'selection.dart';
 
 /// Function signature for creating widgets based on the index and whether
 /// it is selected or not.
-typedef PagedSelectableWidgetBuilder = Widget Function(
-  BuildContext context,
-  int index,
-  Object? item,
-  bool selected,
-);
+// typedef PagedSelectableWidgetBuilder<T> = Widget Function(
+//   BuildContext context,
+//   int index,
+//   T item,
+//   bool selected,
+// );
 
 /// Grid that supports both dragging and tapping to select its items.
 ///
@@ -51,7 +51,7 @@ typedef PagedSelectableWidgetBuilder = Widget Function(
 ///
 /// The first zone is at the top, and triggers backward auto-scrolling.
 /// The second is at the bottom, and triggers forward auto-scrolling.
-class PagedDragSelectGridView extends StatefulWidget {
+class PagedDragSelectGridView<T> extends StatefulWidget {
   /// Default height of the hotspot that enables auto-scroll.
   static const defaultAutoScrollHotspotHeight = 64.0;
 
@@ -162,7 +162,12 @@ class PagedDragSelectGridView extends StatefulWidget {
   /// the index and whether it is selected or not.
   ///
   /// Also refer to [SliverChildBuilderDelegate.builder].
-  final PagedSelectableWidgetBuilder itemBuilder;
+  final Widget Function(
+    BuildContext context,
+    int index,
+    T item,
+    bool selected,
+  ) itemBuilder;
 
   /// Refer to [SliverChildBuilderDelegate.childCount].
   final int? itemCount;

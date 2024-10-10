@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
         selection: controller.value,
         title: const Text('Grid Example'),
       ),
-      body: PagedDragSelectGridView(
+      body: PagedDragSelectGridView<int>(
         pagingController: pagingController,
         gridController: controller,
         padding: const EdgeInsets.all(8),
