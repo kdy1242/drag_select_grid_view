@@ -31,12 +31,6 @@ import 'selection.dart';
 
 /// Function signature for creating widgets based on the index and whether
 /// it is selected or not.
-// typedef PagedSelectableWidgetBuilder<T> = Widget Function(
-//   BuildContext context,
-//   int index,
-//   T item,
-//   bool selected,
-// );
 
 /// Grid that supports both dragging and tapping to select its items.
 ///
@@ -214,13 +208,14 @@ class PagedDragSelectGridView<T> extends StatefulWidget {
   final Widget Function(BuildContext)? noMoreItemsIndicatorBuilder;
 
   @override
-  PagedDragSelectGridViewState createState() => PagedDragSelectGridViewState();
+  PagedDragSelectGridViewState<T> createState() =>
+      PagedDragSelectGridViewState<T>();
 }
 
 /// The state for a grid that supports both dragging and tapping to select its
 /// items.
 @visibleForTesting
-class PagedDragSelectGridViewState extends State<PagedDragSelectGridView>
+class PagedDragSelectGridViewState<T> extends State<PagedDragSelectGridView>
     with AutoScrollerMixin<PagedDragSelectGridView> {
   final _elements = <SelectableElement>{};
   final _selectionManager = SelectionManager();
@@ -336,7 +331,7 @@ class PagedDragSelectGridViewState extends State<PagedDragSelectGridView>
           keyboardDismissBehavior: widget.keyboardDismissBehavior,
           restorationId: widget.restorationId,
           clipBehavior: widget.clipBehavior,
-          builderDelegate: PagedChildBuilderDelegate(
+          builderDelegate: PagedChildBuilderDelegate<T>(
             firstPageErrorIndicatorBuilder:
                 widget.firstPageErrorIndicatorBuilder,
             newPageErrorIndicatorBuilder: widget.newPageErrorIndicatorBuilder,
