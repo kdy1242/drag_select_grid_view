@@ -341,7 +341,7 @@ class PagedDragSelectGridViewState<T> extends State<PagedDragSelectGridView>
                 widget.newPageProgressIndicatorBuilder,
             noItemsFoundIndicatorBuilder: widget.noItemsFoundIndicatorBuilder,
             noMoreItemsIndicatorBuilder: widget.noMoreItemsIndicatorBuilder,
-            itemBuilder: (context, item, index) {
+            itemBuilder: (BuildContext context, T item, int index) {
               return IgnorePointer(
                 ignoring: !widget.selectDisabled &&
                     (isSelecting || widget.triggerSelectionOnTap),
@@ -349,12 +349,14 @@ class PagedDragSelectGridViewState<T> extends State<PagedDragSelectGridView>
                   index: index,
                   onMountElement: _elements.add,
                   onUnmountElement: _elements.remove,
-                  child: widget.itemBuilder(
-                    context,
-                    index,
-                    item,
-                    selectedIndexes.contains(index),
-                  ),
+                  child: Builder(builder: (context) {
+                    return widget.itemBuilder(
+                      context,
+                      index,
+                      item,
+                      selectedIndexes.contains(index),
+                    );
+                  }),
                 ),
               );
             },
