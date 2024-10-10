@@ -8,6 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  infinite_scroll_pagination: ^4.0.0
 
 dev_dependencies:
   flutter_test:

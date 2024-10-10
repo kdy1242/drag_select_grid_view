@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:drag_select_grid_view/drag_select_grid_view.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 import 'selectable_item.dart';
 import 'selection_app_bar.dart';
@@ -43,6 +44,8 @@ class _MyAppState extends State<MyApp> {
     // print(controller.value.selectedIndexes);
   }
 
+  final pagingController = PagingController(firstPageKey: 0);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,12 +53,13 @@ class _MyAppState extends State<MyApp> {
         selection: controller.value,
         title: const Text('Grid Example'),
       ),
-      body: DragSelectGridView(
+      body: PagedDragSelectGridView(
+        pagingController: pagingController,
         gridController: controller,
         padding: const EdgeInsets.all(8),
         itemCount: 90,
         triggerSelectionOnTap: true,
-        itemBuilder: (context, index, selected) {
+        itemBuilder: (context, index, item, selected) {
           return GestureDetector(
             onTap: () {
               print('test');

@@ -50,7 +50,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		ctutcAXqUOr7gqAFJ/Q6DXcXPwE=
+		K9JuUGpTKZEaaZBCBpqIMEaDJ34=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		9x/EIvZ2fyRLQMKMZgtsgCnSj9Q=
+		wqC3ngjUz4Q3KkzGDuD3DSp8kCw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		4SqTXnJA4Xu1q4h4TEhpYLh6FsI=
+		cmM1FUBUmTrTh4yvI72IHWJKZMY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -276,7 +276,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J6h+1AI6kRXzmWf2Ras4wT0wou/Qrk0GhJUoZidOfFc=
+			ijmc4LKyWclatPMl9/zXt0lsbDWCO4k+cHh4di5WyZ4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -290,7 +290,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MgjhvCsyhjxsbS1sdggJLm4kAuY+nwHhG8Ay4P9G2WQ=
+			oFm0DcTGbXMQHGIYrKty1jRzWj4AY/f1mhDGNrbsuP0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -339,7 +339,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b8QeJ6uylv2CM3lPDrLg+m/cgex588U3uF03h0h/GcE=
+			R/gt0KaRuSowqirSUF2J44kI9WHkA1wsZjGW1XmVz/Y=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
