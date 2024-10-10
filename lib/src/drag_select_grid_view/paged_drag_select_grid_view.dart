@@ -215,8 +215,8 @@ class PagedDragSelectGridView<T> extends StatefulWidget {
 /// The state for a grid that supports both dragging and tapping to select its
 /// items.
 @visibleForTesting
-class PagedDragSelectGridViewState<T> extends State<PagedDragSelectGridView>
-    with AutoScrollerMixin<PagedDragSelectGridView> {
+class PagedDragSelectGridViewState<T> extends State<PagedDragSelectGridView<T>>
+    with AutoScrollerMixin<PagedDragSelectGridView<T>> {
   final _elements = <SelectableElement>{};
   final _selectionManager = SelectionManager();
   DragUpdateDetails? _lastDragUpdateDetails;
@@ -349,14 +349,12 @@ class PagedDragSelectGridViewState<T> extends State<PagedDragSelectGridView>
                   index: index,
                   onMountElement: _elements.add,
                   onUnmountElement: _elements.remove,
-                  child: Builder(builder: (context) {
-                    return widget.itemBuilder(
-                      context,
-                      index,
-                      item,
-                      selectedIndexes.contains(index),
-                    );
-                  }),
+                  child: widget.itemBuilder(
+                    context,
+                    index,
+                    item,
+                    selectedIndexes.contains(index),
+                  ),
                 ),
               );
             },
