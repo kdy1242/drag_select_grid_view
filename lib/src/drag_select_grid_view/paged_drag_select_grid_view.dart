@@ -341,7 +341,7 @@ class PagedDragSelectGridViewState<T> extends State<PagedDragSelectGridView<T>>
                 widget.newPageProgressIndicatorBuilder,
             noItemsFoundIndicatorBuilder: widget.noItemsFoundIndicatorBuilder,
             noMoreItemsIndicatorBuilder: widget.noMoreItemsIndicatorBuilder,
-            itemBuilder: (BuildContext context, T item, int index) {
+            itemBuilder: (context, item, index) {
               return IgnorePointer(
                 ignoring: !widget.selectDisabled &&
                     (isSelecting || widget.triggerSelectionOnTap),
